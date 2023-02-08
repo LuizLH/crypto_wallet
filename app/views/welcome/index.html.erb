@@ -1,0 +1,29 @@
+<h1>Seja bem vindo!</h1>
+<p>
+  Luiz Lenhardt
+</p>
+
+<p> A soma é: <%= 1 + 1 %> </p>
+
+<p>
+  Seu nome de trás para frente é: <%# = "Luiz".reverse %> 
+</p>
+
+<% ax = 'conteúdo da variável a' %>
+
+<p>Imprimindo a variável a: <%= ax %></p>
+<p>
+
+</p>
+<p><strong>Data de hoje:</strong> <%= data_br(Date.today) %></p>
+<p>
+
+</p>
+  <%= render "menu" %>
+<p>
+
+</p>
+<p>Você esta no ambiente de <strong><%= Rails.env %></strong></p>
+
+<p>Esta é uma variável de instância/sessão  <strong><%= @nome %></strong></p>
+<p>Esta é a   variável de curso  <strong><%= @curso %></strong></p>
