@@ -8,8 +8,8 @@ namespace :dev do
       end
       show_spinner('Migrando BD...')  {%x(rails db:migrate)}
 
-      %x(rails dev:add_coins)
       %x(rails dev:add_mining_types)
+      %x(rails dev:add_coins)
     else
       puts 'Você não está em modo de desenvolvimento'
     end
@@ -23,31 +23,36 @@ namespace :dev do
           {
            description: "Bitcoin",
            acronym: "BTC",
-           url_image: "https://img.freepik.com/vetores-premium/simbolo-de-bitcoin-de-moeda-dourada-de-criptografia-isolado-em-fundo-transparente_372769-976.jpg"
+           url_image: "https://img.freepik.com/vetores-premium/simbolo-de-bitcoin-de-moeda-dourada-de-criptografia-isolado-em-fundo-transparente_372769-976.jpg",
+           mining_type: MiningType.find_by(acronym: "PoW")
           },
       
           {
            description: "Ethereum",
            acronym: "ETH",
-           url_image: "https://png.pngtree.com/png-clipart/20210511/ourmid/pngtree-this-is-ethereum-cryptocurrency-vector-illustration-png-image_3279437.jpg"
+           url_image: "https://png.pngtree.com/png-clipart/20210511/ourmid/pngtree-this-is-ethereum-cryptocurrency-vector-illustration-png-image_3279437.jpg",
+           mining_type: MiningType.find_by(acronym: "PoS")
           },
       
           {
            description: "Dash",
            acronym: "DASH",
-           url_image: "https://cryptologos.cc/logos/dash-dash-logo.png"
+           url_image: "https://cryptologos.cc/logos/dash-dash-logo.png",
+           mining_type: MiningType.find_by(acronym: "PoW")
           },
      
           {
            description: "Iota",
            acronym: "TOT",
-           url_image: "https://cryptologos.cc/logos/iota-miota-logo.png"
+           url_image: "https://cryptologos.cc/logos/iota-miota-logo.png",
+           mining_type: MiningType.find_by(acronym: "PoC")
           },
      
           {
            description: "ZCash",
            acronym: "ZEC",
-           url_image: "https://cryptologos.cc/logos/zcash-zec-logo.png"
+           url_image: "https://cryptologos.cc/logos/zcash-zec-logo.png",
+           mining_type: MiningType.find_by(acronym: "PoW")
           }
         ]
      
